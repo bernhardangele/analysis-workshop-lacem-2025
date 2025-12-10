@@ -6,7 +6,7 @@ packages <- c(
   "tidyverse",    # Data manipulation and visualization
   "lme4",         # Linear mixed effects models
   "lmerTest",     # P-values for lme4 models
-  "gghalves",     # Raincloud plots
+  "ggdist",     # For raincloud plots
   "broom.mixed"   # Tidy model outputs
 )
 
