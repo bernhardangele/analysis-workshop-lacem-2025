@@ -56,6 +56,7 @@ Notes:
 - Use the `Files` pane in RStudio to navigate the repo. Go to `projects`, `analysis-workshop-lacem-2025` and open the `analysis-workshop-lacem.Rproj` to load the project. Then open the `lmm-presentation.qmd` file. You can click `Render` to build the presentation.
 - You can still use the VS Code terminal and editor alongside RStudio (but it should not be necessary).
 - Every GitHub account has a limited number of minutes of codespace usage every month (120 for free accounts and 180 for Github Education accounts). If you run out of minutes, the codespace will terminate. However, it is unlikely that you will reach this limit during the workshop. You can check your usage in your GitHub account settings under "Billing".
+- Note that, in order to minimize your usage, the Codespace will stop automatically if it is idle for more than 30 minutes. In this case, RStudio will stop working. You can restart the codespace from the `Code` button or from https://github.com/codespaces
 
 
 ## Option 2: Installation
