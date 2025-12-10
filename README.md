@@ -22,6 +22,41 @@ To run this presentation, you'll need:
   - lmerTest
   - ggdist
   - broom.mixed
+ 
+The easiest way to run this workshop is by using GitHub Codespaces. Alternatively, you can install the software and the packages on your own computer (see below).
+
+## Option 1: Running in GitHub Codespaces
+
+The repository includes a devcontainer image that provides RStudio Server. You can run the workshop entirely in GitHub Codespaces and use a full RStudio session in your browser.
+
+### Start a Codespace
+
+1. Open the repository page: https://github.com/bernhardangele/analysis-workshop-lacem-2025 (if you are reading this, you may be already on it).
+2. Click the green `Code` button.
+3. Select the `Codespaces` tab.
+4. Click `Create codespace on main`.
+5. Wait for the container to build and initialize (first start may take a few minutes).
+
+### Open RStudio in your Codespace
+
+Once the Codespace is running:
+
+- Look for the `Ports` panel (bottom or left sidebar in the web VS Code editor). A port labeled `RStudio` (usually 8787) should appear when the container finishes starting.
+- Click the `Open in Browser` icon for the `RStudio` port to launch RStudio Server.
+
+If you don’t see the port immediately:
+
+- Open the Command Palette (Ctrl/Cmd + Shift + P) and run `Ports: Focus on Ports View`.
+- Alternatively, wait a few minutes for the service to start; the port will be auto-forwarded once RStudio is ready.
+- You will see the number of active ports next to the "Ports" tab once RStudio is ready.
+
+Notes:
+
+- RStudio will open directly in your browser. The login and password are both "rstudio". This is safe since this codespace can only be accessed from your GitHub account.
+- Use the `Files` pane in RStudio to navigate the repo. Go to `projects`, `analysis-workshop-lacem-2025` and open the `lmm_presentation.qmd`, `download_data.R`, and the `data/` directory as needed.
+- You can still use the VS Code terminal and editor alongside RStudio (but it should not be necessary).
+- Every GitHub account has a limited number of minutes of codespace usage every month (120 for free accounts and 180 for Github Education accounts). If you run out of minutes, the codespace will terminate. However, it is unlikely that you will reach this limit during the workshop. You can check your usage in your GitHub account settings under "Billing".
+
 
 ## Installation
 
