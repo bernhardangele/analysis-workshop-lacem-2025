@@ -53,12 +53,15 @@ If you don’t see the port immediately:
 Notes:
 
 - RStudio will open directly in your browser. The login and password are both "rstudio". This is safe since this codespace can only be accessed from your GitHub account.
-- Use the `Files` pane in RStudio to navigate the repo. Go to `projects`, `analysis-workshop-lacem-2025` and open the `lmm_presentation.qmd`, `download_data.R`, and the `data/` directory as needed.
+- Use the `Files` pane in RStudio to navigate the repo. Go to `projects`, `analysis-workshop-lacem-2025` and open the `analysis-workshop-lacem.Rproj` to load the project. Then open the `lmm-presentation.qmd` file. You can click `Render` to build the presentation.
 - You can still use the VS Code terminal and editor alongside RStudio (but it should not be necessary).
 - Every GitHub account has a limited number of minutes of codespace usage every month (120 for free accounts and 180 for Github Education accounts). If you run out of minutes, the codespace will terminate. However, it is unlikely that you will reach this limit during the workshop. You can check your usage in your GitHub account settings under "Billing".
 
 
-## Installation
+## Option 2: Installation
+
+- This is more flexible, but requires you to have R and RStudio installed on your computer. Download the data from the repository to a new folder on your computer. You can do this by running `git clone git@github.com:bernhardangele/analysis-workshop-lacem-2025.git` in the command line/terminal if you have git installed, or use the `Code` button on the repository page, click `Local`, and download the code as a ZIP file which you can then extract in a folder of your choice.
+- Open RStudio. Use the `Files` pane in RStudio to navigate to the folder where you have downloaded the files. Open the `analysis-workshop-lacem.Rproj` to load the project. Then open the `lmm-presentation.qmd` file. You can click `Render` to build the presentation.
 
 ### Downloading Data Files
 
