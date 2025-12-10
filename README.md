@@ -20,7 +20,7 @@ To run this presentation, you'll need:
   - tidyverse
   - lme4
   - lmerTest
-  - gghalves
+  - ggdist
   - broom.mixed
 
 ## Installation
@@ -47,7 +47,7 @@ download_workshop_data(force_download = TRUE)
 ### Install R packages
 
 ```r
-install.packages(c("tidyverse", "lme4", "lmerTest", "gghalves", "broom.mixed"))
+install.packages(c("tidyverse", "lme4", "lmerTest", "ggdist", "broom.mixed"))
 ```
 
 ### Install Quarto
