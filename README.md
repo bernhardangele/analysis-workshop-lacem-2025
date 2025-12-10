@@ -75,7 +75,7 @@ The presentation covers:
 1. **Data Reading and Exploration**
    - Loading eye-tracking data with tidyverse's `read_csv()`
    - Descriptive statistics
-   - Raincloud plots using gghalves
+   - Raincloud plots using ggplot2 and ggdist
 
 2. **Hindi Data - Factorial Design**
    - Setting up two-factor design (word type × frequency)
@@ -92,8 +92,7 @@ The presentation covers:
    - Random slopes vs. random intercepts
    - Power considerations (Brysbaert & Stevens, 2018)
    - Multiple comparisons issues
-   - Extracting statistics for inline reporting
-
+     
 ## Data Description
 
 ### Hindi Data (Hindi_new.csv)
