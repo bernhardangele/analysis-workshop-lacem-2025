@@ -27,7 +27,7 @@ The easiest way to run this workshop is by using GitHub Codespaces. Alternativel
 
 ## Option 1: Running in GitHub Codespaces
 
-The repository includes a devcontainer image that provides RStudio Server. You can run the workshop entirely in GitHub Codespaces and use a full RStudio session in your browser.
+The repository includes a devcontainer image that provides RStudio Server. You can run the workshop entirely in GitHub Codespaces and use a full RStudio session in your browser. Please note that you need to be logged into GitHub for this to work.
 
 ### Start a Codespace
 
