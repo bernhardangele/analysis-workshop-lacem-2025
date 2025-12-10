@@ -124,13 +124,15 @@ hindi_data %>%
     n = n(),
     mean_ffd = mean(IA_FIRST_FIXATION_DURATION, na.rm = TRUE),
     sd_ffd = sd(IA_FIRST_FIXATION_DURATION, na.rm = TRUE),
-    mean_gd = mean(IA_DWELL_TIME, na.rm = TRUE),
-    sd_gd = sd(IA_DWELL_TIME, na.rm = TRUE)
+    mean_gd = mean(IA_FIRST_RUN_DWELL_TIME, na.rm = TRUE),
+    sd_gd = sd(IA_FIRST_RUN_DWELL_TIME, na.rm = TRUE),
+    mean_tvt = mean(IA_DWELL_TIME, na.rm = TRUE),
+    sd_tvt = sd(IA_DWELL_TIME, na.rm = TRUE)
   ) %>% 
   gt::gt() %>%
  # round fixation times to whole numbers
   fmt_number(
-    columns = c(mean_ffd, sd_ffd, mean_gd, sd_gd),
+    columns = c(mean_ffd, sd_ffd, mean_gd, sd_gd, mean_tvt, sd_tvt),
     decimals = 0
   )
 ```
@@ -145,7 +147,9 @@ hindi_data %>%
 #| output-location: slide
 
 
-ggplot(hindi_data, aes(x = cond_name, y = IA_FIRST_FIXATION_DURATION, fill = cond_name)) +
+hindi_data %>% ggplot(aes(x = cond_name, 
+                          y = IA_FIRST_FIXATION_DURATION, 
+                          fill = cond_name)) +
   
   # --- The "Cloud"
   # justification = -0.2 moves it to the RIGHT side.
@@ -249,13 +253,13 @@ ggplot(hindi_data, aes(x = writing_system, y = IA_FIRST_FIXATION_DURATION, fill 
 
 ```
 
-## Raincloud Plot - Hindi Data (Gaze duration) {.scrollable}
+## Raincloud Plot - Hindi Data (Total viewing time) {.scrollable}
 
 ```{r hindi-raincloud-dwell-time}
 #| echo: true
 #| fig.width: 10
 #| fig.height: 6
-#| figure-caption: "Raincloud Plot: First Fixation Duration by Condition. Boxplot shows median and interquartile range; dots represent individual observations. Black diamonds indicate means."
+#| figure-caption: "Raincloud Plot: Total Viewing Time by Condition. Boxplot shows median and interquartile range; dots represent individual observations. Black diamonds indicate means."
 #| output-location: slide
 ggplot(hindi_data, aes(x = cond_name, y = IA_DWELL_TIME, fill = cond_name)) +
   
@@ -290,9 +294,9 @@ ggplot(hindi_data, aes(x = cond_name, y = IA_DWELL_TIME, fill = cond_name)) +
   
   # Axis lables, theme
   labs(
-    title = "Raincloud Plot: Gaze duration",
+    title = "Raincloud Plot: Total viewing time",
     x = "Condition",
-    y = "Gaze duration (ms)"
+    y = "Total viewing time (ms)"
   ) +
   theme_minimal() +
   # legend is not needed since colors are redundant with x position
@@ -301,22 +305,23 @@ ggplot(hindi_data, aes(x = cond_name, y = IA_DWELL_TIME, fill = cond_name)) +
 
 ## Removing outliers
 
-- We seem to have a few 0s in the dwell time data
-- There are also some very long dwell times. 
-- We should eliminate very long times, maybe with a cutoff at 1200
+- We seem to have a few 0s in the total viewing time data
+- There are also some very long total viewing times. 
+- We should eliminate very long times, maybe with a cutoff at 2000
 
 ```{r remove-zeros-dwell-time}
 #| echo: true
 # Remove 0 and very long dwell time values by setting them to NA
 hindi_data_clean <- hindi_data %>%
-  mutate(IA_DWELL_TIME  = if_else(condition = IA_DWELL_TIME > 0 & IA_DWELL_TIME < 1200,
+  mutate(IA_DWELL_TIME  = if_else(condition = IA_DWELL_TIME > 0 & IA_DWELL_TIME < 2000,
                                  true = IA_DWELL_TIME, 
                                  false = NA))
+
 ```
 
-## Frequency effect in GD {.scrollable}
+## Frequency effect in TVT {.scrollable}
 
-```{r hindi-raincloud-frequency-as-fill-gd}
+```{r hindi-raincloud-frequency-as-fill-tvt}
 #| echo: true
 #| output-location: slide
 #| fig.width: 10
@@ -359,9 +364,9 @@ ggplot(hindi_data_clean, aes(x = writing_system, y = IA_DWELL_TIME, fill = frequ
   ) +
   # Axis lables, theme
   labs(
-    title = "Raincloud Plot: First Fixation Duration by Writing System and Frequency",
+    title = "Raincloud Plot: TVT by Writing System and Frequency",
     x = "Writing System",
-    y = "Gaze duration (ms)"
+    y = "TVT (ms)"
   ) +
   theme_minimal() +
   theme(legend.position = "right")
