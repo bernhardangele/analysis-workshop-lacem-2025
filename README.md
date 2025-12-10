@@ -42,7 +42,7 @@ The repository includes a devcontainer image that provides RStudio Server. You c
 Once the Codespace is running:
 
 - Look for the `Ports` panel (bottom or left sidebar in the web VS Code editor). A port labeled `RStudio` (usually 8787) should appear when the container finishes starting.
-- Click the `Open in Browser` icon for the `RStudio` port to launch RStudio Server.
+- Click the `Open in Browser` 🌐 icon for the `RStudio` port to launch RStudio Server.
 
 If you don’t see the port immediately:
 
