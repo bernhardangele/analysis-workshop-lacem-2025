@@ -586,9 +586,9 @@ rastros_clean <- rastros_clean %>%
 # Part 2: Fitting LMMs
 
 
-## Hind data (factorial)
+## Hindi data (factorial)
 - Setting up factors
-- Research Question: How do word type (romance vs. traditional) and frequency (low vs. high) affect reading time?
+- Research Question: How do writing system (romance vs. traditional) and frequency (low vs. high) affect reading time?
 
 ```{r setup-hindi-factors}
 # Create factors
@@ -619,7 +619,7 @@ contrasts(hindi_data_clean$frequency)
 #| echo: true
 # Fit the model with interaction
 model_hindi_treatment <- lmer(IA_FIRST_FIXATION_DURATION ~ writing_system * frequency + 
-                     (1|RECORDING_SESSION_LABEL) + (1|stim_num), 
+                     (1|subject) + (1|item), 
                    data = hindi_data_clean)
 ```
 
